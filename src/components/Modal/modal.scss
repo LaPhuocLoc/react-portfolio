@@ -1,0 +1,129 @@
+@use "../../scss/" as *;
+.modal {
+  @include flex(center, center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5 ease;
+  background-color: transparent !important;
+  z-index: 9999;
+  &.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation: opacity .75s ease forwards;
+    .icon {
+      animation: fall-in 0.75s ease forwards;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+  }
+  &__content {
+    &.success,
+    &.error {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border-radius: 2px;
+      background-color: $white;
+      padding: 25px 25px 15px;
+      //border 1px solid #ddd
+      text-align: center;
+    }
+    button,
+    button:active,
+    button:focus {
+      transition: all 0.3s;
+      border-radius: $border-radius;
+      width: 80%;
+      background: transparent;
+      color: $success-color;
+      border-color: $success-color;
+      outline: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid $success-color;
+      &:hover {
+        color: $white;
+        background-color: $success-color;
+        border-color: transparent;
+      }
+    }
+    .icon {
+      position: relative;
+      margin: 0 auto;
+      margin-top: -75px;
+      @include flex(center, center);
+      background-color: $success-color;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      i {
+        font-size: 5em;
+        color: $white;
+        text-align: center;
+      }
+    }
+    &.error {
+      .icon {
+        background-color: $error-color;
+        span {
+          padding-top: 25px;
+        }
+      }
+    }
+    &.error button,
+    &.error button:active,
+    &.error button:focus {
+      color: $error-color;
+      border-color: $error-color;
+      &:hover {
+        color: $white;
+        background: $error-color;
+      }
+    }
+    h3 {
+      color: #333333;
+      font-size: 36px;
+      font-weight: 500;
+    }
+    p {
+      color: #333333;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .change {
+      color: #666666;
+      font-size: 12px;
+      display: block;
+      margin-top: 2px;
+      opacity: 0.7;
+    }
+  }
+}
+@keyframes fall-in {
+  0% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

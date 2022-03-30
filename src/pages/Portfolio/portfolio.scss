@@ -1,0 +1,38 @@
+@use "../../scss/" as *;
+.portfolio {
+  @include mobile {
+    padding: 3.75rem 1rem;
+  }
+  
+}
+.tab {
+  padding: 0 1rem;
+  @include tablet {
+    padding: 0;
+  }
+  &__nav {
+    @include flex(center, center);
+
+    &-item {
+      font-family: $pp-font;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 0 1rem;
+      margin-bottom: 2rem;
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+  &__panel {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+.react-tabs__tab--selected {
+  color: var(--main-color);
+}

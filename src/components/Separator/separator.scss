@@ -1,0 +1,6 @@
+@use "../../scss/" as *;
+.separator {
+  border-top: 1px solid #252525;
+  margin: 70px auto 55px;
+  max-width: 40%;
+}

@@ -1,0 +1,155 @@
+@use "../../scss/" as *;
+.contact {
+  @include mobile {
+    padding: 3.75rem 0;
+  }
+  input,
+  textarea {
+    padding: 1rem 2rem;
+    background-color: var(--nav-bg-color);
+    border-radius: $border-radius;
+    border: 1px solid var(--nav-bg-color);
+    color: var(--txt-color);
+    font-size: 15px;
+    outline: none !important;
+    transition: all 0.3s ease;
+    &:focus {
+      border-color: var(--main-color);
+    }
+    &::placeholder {
+      text-transform: uppercase;
+      font-family: $pp-font;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-4,
+.col-8 {
+  padding: 0 15px;
+}
+.col-4 {
+  width: calc(100% / 3);
+}
+.col-8 {
+  width: calc((100% / 3) * 2);
+}
+.col {
+  @include tablet {
+    width: 100%;
+  }
+}
+.contact-info {
+  h3 {
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  p {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+  &__list {
+    li {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 20px;
+      line-height: 25px;
+      font-weight: 600;
+      @include tablet {
+        font-size: 15px;
+      }
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 36px;
+        color: var(--main-color) !important;
+      }
+      span {
+        display: block;
+        color: var(--txt-color);
+        opacity: 0.8;
+        font-weight: 400;
+        padding: 0;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .social-list {
+    @include flex(center, flex-start);
+    flex-wrap: wrap;
+    li {
+      margin-right: 8px;
+      a {
+        @include flex(center, center);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--nav-bg-color);
+        transition: all .3s ease;
+        i {
+          font-size: 22px;
+          color: var(--txt-color);
+        }
+        &:hover {
+          background-color: var(--main-color);
+          i {
+            color: var(--toggle-color);
+          }
+        }
+      }
+    }
+  }
+}
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  .field {
+    width: 100%;
+    margin-bottom: 2rem;
+    .error {
+      display: block;
+      width: 100%;
+      margin-top: 0.25rem;
+      font-size: 0.875em;
+      color: #dc3545;
+    }
+  }
+  &__info {
+    @include flex(center, space-between);
+    flex-wrap: wrap;
+    &-name,
+    &-email {
+      width: calc(50% - 15px);
+      @include mobile {
+        width: 100%;
+      }
+      input {
+        width: 100%;
+      }
+    }
+    &-name {
+      @include mobile {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  &__subject,
+  &__message {
+    display: flex;
+    flex-wrap: wrap;
+    input,
+    textarea {
+      flex: 1;
+    }
+    textarea {
+      min-height: 200px;
+    }
+  }
+}

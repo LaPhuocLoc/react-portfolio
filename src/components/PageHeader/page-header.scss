@@ -1,0 +1,39 @@
+@use "../../scss/" as *;
+.page-header {
+  @include flex(center, center);
+  width: 100%;
+  padding: 5rem 0;
+  font-family: $pp-font;
+  text-transform: uppercase;
+  position: relative;
+  @include mobile {
+    padding: 5rem 1rem;
+  }
+  & h1 {
+    font-size: 56px;
+    color: var(--main-color);
+    font-weight: 900;
+    text-align: center;
+    & > span {
+      color: var(--txt-color);
+    }
+    @include mobile {
+      font-size: 35px;
+    }
+  }
+  & > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 110px;
+    color: var(--title-bg);
+    font-weight: 800;
+    letter-spacing: 10px;
+    line-height: 0.7;
+    @include mobile {
+      font-size: 65px;
+      letter-spacing: 4px;
+    }
+  }
+}

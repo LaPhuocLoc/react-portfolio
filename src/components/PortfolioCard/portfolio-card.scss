@@ -1,0 +1,57 @@
+@use "../../scss/" as *;
+.portfolio-card {
+  width: calc((100% / 3) - 20px);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  @include tablet {
+    width: calc((100% / 2) - 15px);
+  }
+  @include mobile {
+    width: 100%;
+  }
+
+  .bg-wrap {
+    width: 100%;
+    padding-top: 62.5%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+    z-index: 2;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1;
+  }
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  &:hover h3 {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
+  }
+}

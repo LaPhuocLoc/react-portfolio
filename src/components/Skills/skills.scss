@@ -1,0 +1,46 @@
+@use "../../scss/" as *;
+.skill-heading {
+  font-size: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  @include mobile {
+    font-size: 21px;
+    text-align: left;
+  }
+}
+.skill {
+  @include flex(center, flex-start);
+  flex-wrap: wrap;
+  gap: 2.5rem 0;
+  &-item {
+    @include flex(center, center);
+    flex-direction: column;
+    width: 25%;
+    @include mobile {
+      width: 50%;
+    }
+    &__img {
+      @include flex(center, center);
+      width: 120px;
+      height: 120px;
+      $skill-bg: 37,37,37;
+      background-color: var(--toggle-color);
+      border-radius: 50%;
+      &-wrap {
+        width: 60%;
+        height: 60%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+    &__name {
+      & h6 {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 14px;
+        font-family: $pp-font;
+      }
+    }
+  }
+}

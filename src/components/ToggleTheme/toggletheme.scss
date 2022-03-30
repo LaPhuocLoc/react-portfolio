@@ -1,0 +1,41 @@
+@use "../../scss/" as *;
+.toggle-theme {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--toggle-color);
+  z-index: 99;
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    opacity: 0;
+    visibility: hidden;
+    color: white !important;
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+  i:nth-child(2) {
+    opacity: 1;
+    visibility: visible;
+  }
+  &.active {
+    i:nth-child(1) {
+      opacity: 1;
+      visibility: visible;
+    }
+    i:nth-child(2) {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
