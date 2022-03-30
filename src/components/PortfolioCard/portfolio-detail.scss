@@ -69,18 +69,18 @@
       margin-bottom: 1rem;
       line-height: 1.5;
       font-weight: 400;
-      color: var(--body-bg);
+      color: $white;
     }
     ul {
       li {
         margin-bottom: 10px;
         font-weight: 500;
         text-transform: capitalize;
-        color: var(--body-bg);
+        color: $white;
 
         span {
           font-weight: 300;
-          color: var(--body-bg);
+          color: $white;
         }
         a {
           text-transform: lowercase;
