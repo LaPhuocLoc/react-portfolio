@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../../components/Button/Button'
 import './home.scss'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   window.scrollTo(0, 0)
@@ -22,10 +23,12 @@ const Home = () => {
             <Button
               className=""
             >
-              <span className="btn-text">more about me</span>
-              <span className="btn-icon">
-                <i className='bx bx-right-arrow-alt'></i>
-              </span>
+              <Link to="/about">
+                <span className="btn-text">more about me</span>
+                <span className="btn-icon">
+                  <i className='bx bx-right-arrow-alt'></i>
+                </span>
+              </Link>
             </Button>
           </div>
         </div>

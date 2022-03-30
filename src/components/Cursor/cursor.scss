@@ -20,6 +20,12 @@
   transform: translate(-50%, -50%);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   z-index: 9999;
+  @include tablet {
+    display: none;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .cursor-dot {
