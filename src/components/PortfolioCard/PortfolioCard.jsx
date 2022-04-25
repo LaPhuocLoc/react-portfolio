@@ -3,8 +3,8 @@ import './portfolio-card.scss'
 const PortfolioCard = ({ item, id }) => {
 
   const handleClick = () => {
-    const videoUrl = `https://youtube.com/embed/${item.ytb}`
-    document.querySelector(`#portfolio-detail-${id} iframe`).setAttribute('src', videoUrl)
+    // const videoUrl = `https://youtube.com/embed/${item.ytb}`
+    // document.querySelector(`#portfolio-detail-${id} iframe`).setAttribute('src', videoUrl)
     document.querySelector(`#portfolio-detail-${id}`).classList.add('active')
     document.body.classList.add("hide-scrolling")
   }

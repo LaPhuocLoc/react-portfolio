@@ -1,0 +1,603 @@
+/* ----------------------------------------------------------------
+* MpUtility
+
+* init
+
+* utility
+* _cutText
+* _ifNoImage
+* _afterLazyload
+* _lazyload
+* _clickCassette
+* _clickCassetteSmp
+* _cassetteHover
+* _alignHeight
+* _setCarousel
+* _ifErrImage
+* _setSwiper
+* _getUrlParam
+*_setIsc
+* _setClk
+* _setSiteCatalyst
+* siteCatalyst_clk
+---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+* init
+---------------------------------------------------------------- */
+var MpUtility = (function($) {
+	'use strict';
+	var $win = $(window),
+		isHtml4IE = document.documentMode === 5,
+		noImgPath = '/media/stu/img/common/noimage_200x150.png';
+
+	/* ----------------------------------------------------------------
+	* _cutText
+	文字省略（テキストを短縮して三点リーダー「…」を付ける）
+	---------------------------------------------------------------- */
+	function _cutText(text, maxByte, unescapeWithDOM) {
+		var result = '',
+			count = 0,
+			mbFlag;
+
+		text = unescapeHTML(text);
+
+		for (var i = 0; i < text.length; i++) {
+			var n = encodeURI(text.charAt(i));
+			if (n.length < 7) {
+				count += 1;
+				mbFlag = false;
+			} else {
+				count += 2;
+				mbFlag = true;
+			}
+
+			if (count <= maxByte) {
+				result += text.charAt(i);
+			} else if (mbFlag && maxByte % 2 !== 0) {
+				result = result + '…';
+				break;
+			} else {
+				result = result.substring(0, i) + '…';
+				break;
+			}
+		}
+
+		return _.escape(result);
+
+		function unescapeHTML(val) {
+			if (unescapeWithDOM) {
+				return $('<div>').html(val).text();
+			} else {
+				var unescapeMap = {
+						'&amp;': '&',
+						'&lt;': '<',
+						'&gt;': '>',
+						'&quot;': '"',
+						'&#x27;': "'",
+						'&#x60;': '`',
+						'&#39;': "'",
+						'&ensp;': ' ',
+						'&nbsp;': ' '
+					},
+					createEscaper = function(map) {
+						var escaper = function(match) { return map[match]; },
+							source = '(?:' + _.keys(map).join('|') + ')',
+							testRegexp = RegExp(source),
+							replaceRegexp = RegExp(source, 'g');
+						return function(string) {
+							string = string === null ? '' : '' + string;
+							return testRegexp.test(string) ? string.replace(replaceRegexp, escaper) : string;
+						};
+					};
+				return createEscaper(unescapeMap)(val);
+			}
+		}
+	}
+
+	/* ----------------------------------------------------------------
+	* _ifNoImage
+	画像パスが未設定の場合にnoImageパスにする
+	---------------------------------------------------------------- */
+	function _ifNoImage(path) {
+		if (!path) {
+			return mp_env.context + noImgPath;
+		} else {
+			return path;
+		}
+	}
+
+	/* ----------------------------------------------------------------
+	* _afterLazyload
+	lazyload.jsの読み込み
+	---------------------------------------------------------------- */
+	// ajaxで読み込んだリストはlazyload.min.jsの後読みが必要なのでこのfunctionを使用
+	function _afterLazyload(target, imgPath) {
+		$.getScript(mp_env.context + "/media/stu/js/common/jquery.lazyload.js", function() {
+			_lazyload(target, imgPath);
+		});
+	}
+
+	/* ----------------------------------------------------------------
+	* _lazyload
+	lazyload発火
+	---------------------------------------------------------------- */
+	function _lazyload(target, imgPath) {
+		var $target = target || $('body'),
+			_init = {
+				'event': 'inview',
+				'effect': 'fadeIn',
+				'error': function() {
+					var $this = $(this),
+						_appeal = $this.data('appeal');
+
+					if (_appeal) {
+						$this.attr('src', _appeal);
+
+						$this.on('error', function() {
+							_noimage($this);
+						});
+					} else {
+						_noimage($this);
+					}
+				}
+			},
+			NO_IMG_PATH = mp_env.context + noImgPath;
+
+		function _noimage($target) {
+			$target.attr('src', imgPath || NO_IMG_PATH);
+		}
+
+		$target.find('.js_lazyload').mp_lazyload(_init);
+	}
+
+	/* ----------------------------------------------------------------
+	* _clickCassette
+	カセットクリック
+	---------------------------------------------------------------- */
+	function _clickCassette($ul) {
+		$ul.children('li').not('.is_more').on('click', function() {
+			window.open($(this).data('href'));
+		}).find('a, input, label').on('click', function(e) {
+			e.stopPropagation();
+		});
+	}
+
+	/* ----------------------------------------------------------------
+	* _clickCassetteSmp
+	カセットクリック(SMP用_塗り替わり)
+	---------------------------------------------------------------- */
+	function _clickCassetteSmp($ul) {
+		$ul.children('li').not('.is_more').on('click', function() {
+			location.href = $(this).data('href');
+		}).find('a, input, label').on('click', function(e) {
+			e.stopPropagation();
+		});
+	}
+
+	/* ----------------------------------------------------------------
+	* _cassetteHover
+	カセットhover（HTML4用）
+	---------------------------------------------------------------- */
+	function _cassetteHover($ul) {
+		$ul.children('.js_cassette').hover(function() {
+			$(this).toggleClass('is_hover');
+		}).find(':not(.js_cassette_cname) a').hover(function() {
+			$(this).closest('.js_cassette').toggleClass('is_hover');
+			if (isHtml4IE) {
+				$(this).closest('.js_cassette').toggleClass('is_hover_btn');
+			}
+		});
+	}
+
+	/* ----------------------------------------------------------------
+	* _alignHeight
+	カセットの高さをそろえる
+	---------------------------------------------------------------- */
+	function _alignHeight($ul, cols) {
+		var $item = $ul.children('li'),
+			itemLen = $item.length,
+			rows = Math.ceil(itemLen / cols),
+			$this, i, j, max, start, end;
+
+		for (i = 0; i < rows; i++) {
+			max = {
+				name: 0,
+				info: 0
+			};
+
+			start = i === 0 ? 0 : cols * i; //1行目 or 2行目以降
+			end = rows === i + 1 ? itemLen : cols * (i + 1);
+
+			for (j = start; j < end; j++) {
+				$this = $item.eq(j);
+
+				if (max.name < $this.find('.js_cassette_cname').outerHeight()) { // 個社名の最大値を取得
+					max.name = $this.find('.js_cassette_cname').outerHeight();
+				}
+				if (max.info < $this.find('.js_cassette_info').outerHeight()) { // 個社情報の最大値を取得
+					max.info = $this.find('.js_cassette_info').outerHeight();
+				}
+			}
+			for (j = start; j < end; j++) { // 最大値に設定
+				$this = $item.eq(j);
+				$this.find('.js_cassette_cname').height(max.name);
+				$this.find('.js_cassette_info').height(max.info);
+			}
+		}
+	}
+
+	/* ----------------------------------------------------------------
+	* _setCarousel
+	カルーセル
+	---------------------------------------------------------------- */
+	/*
+	 * @param obj.wrap  : overflow:hiddenのjQuery要素
+	 * @param obj.tgt   : リスト（ul）のjQuery要素
+	 * @param obj.range : 移動させる個数
+	 * @param obj.itemW : 移動させる幅
+	 * @param obj.pager : ページャー（true/false）
+	 */
+	function _setCarousel(obj) {
+		var $wrap = obj.wrp,
+			$list = obj.tgt,
+			$item = $list.find('.js_carousel_item_wrap'),
+			num = $item.length,
+			itemW = obj.itemW || 154,
+			range = obj.range || 4,
+			rangeW = range * itemW,
+			pages = Math.ceil(num / range),
+			pos = 1,
+			flg = false,
+			_tmp = obj.pagerTmp,
+			$prev, $next, currentX, $pager;
+
+		if (obj.pager) {
+			$list.after(_tmp({ pages: pages }));
+			$pager = $list.next('.js_carousel_pager').find('li');
+		}
+
+		if (pages !== 1) {
+			$list
+				.after('<div class="mp_carousel_prev js_carousel_prev"></div>')
+				.after('<div class="mp_carousel_next js_carousel_next"></div>');
+		}
+		$list.css('width', num * itemW + (isHtml4IE ? 3 : 0));
+
+		$prev = $wrap.find('.js_carousel_prev');
+		$next = $wrap.find('.js_carousel_next');
+
+		$prev.on('click', function() {
+			if (!flg && pos > 1) {
+				flg = true;
+				pos--;
+				_funcPager();
+				if (pos < pages && $next.attr('class').indexOf('mp_op0') >= 0) {
+					$next.removeClass('mp_op0');
+				}
+				currentX = Number($list.css('marginLeft').replace('px', ''));
+				_slide((pos - 1) * -rangeW);
+				if (pos == 1) {
+					$prev.addClass('mp_op0');
+				}
+				flg = false;
+				if (obj.prevFunc) {
+					obj.prevFunc();
+				}
+			}
+			$(window).trigger('scroll');
+		}).addClass('mp_op0');
+		$next.on('click', function() {
+			if (!flg && pos < pages) {
+				flg = true;
+				pos++;
+				_funcPager();
+				if (pos > 1 && $prev.attr('class').indexOf('mp_op0')) {
+					$prev.removeClass('mp_op0');
+				}
+				currentX = $list.css('marginLeft').replace('px', '');
+				_slide((pos - 1) * -rangeW);
+				if (pos == pages) {
+					$next.addClass('mp_op0');
+				}
+				flg = false;
+				if (obj.nextFunc) {
+					obj.nextFunc();
+				}
+			}
+			$(window).trigger('scroll');
+		});
+		if (obj.pager) {
+			$pager.on('click', function() {
+				if (flg) {
+					return;
+				}
+				if (pos !== Number($(this).data('num'))) {
+					flg = true;
+				}
+
+				pos = $(this).data('num');
+				_funcPager();
+				if (pos > 1 && $prev.attr('class').indexOf('mp_op0')) {
+					$prev.removeClass('mp_op0');
+				}
+				if (pos < pages && $next.attr('class').indexOf('mp_op0') >= 0) {
+					$next.removeClass('mp_op0');
+				}
+				currentX = $list.css('marginLeft').replace('px', '');
+
+				_slide((pos - 1) * -rangeW);
+				if (pos == pages) {
+					$next.addClass('mp_op0');
+				}
+				if (pos == 1) {
+					$prev.addClass('mp_op0');
+				}
+				flg = false;
+
+				if (obj.pagerFunc) {
+					obj.pagerFunc();
+				}
+			});
+		}
+
+		function _funcPager() {
+			if (!obj.pager) {
+				return;
+			}
+
+			$pager.removeClass('is_active');
+			$pager.eq(pos - 1).addClass('is_active');
+		}
+
+		function _slide(pos) {
+			if (isHtml4IE) {
+				$list.animate({
+					'marginLeft': pos
+				}, 500);
+			} else {
+				// HTML5の場合はCSSアニメーションで実装
+				$list.css('marginLeft', pos);
+			}
+		}
+	}
+
+	/* ----------------------------------------------------------------
+	* _ifErrImage
+	引数より下層のimgがエラーを返した場合に画像パスをnoImgにする
+	---------------------------------------------------------------- */
+	function _ifErrImage($selector) {
+		$selector.find('img').on('error', function() {
+			$(this).attr('src', mp_env.context + noImgPath);
+		});
+	}
+
+	/* ----------------------------------------------------------------
+	* _setSwiper
+	スワイパーの指マークアイコン
+	---------------------------------------------------------------- */
+	function _setSwiper($ul) {
+		if ($ul.find('li').outerWidth(true) * $ul.find('li').length > $ul.width()) {
+			$ul.on('inview', function(){
+				$(this).addClass('is_arrow');
+			});
+		}
+	}
+
+	/* ----------------------------------------------------------------
+	* _getUrlParam
+	URLパラメータ抽出
+	---------------------------------------------------------------- */
+	function _getUrlParam() {
+		var obj = {},
+			arr = location.search.substring(1).split('&'),
+			i, pair, key;
+		for (i = 0; i < arr.length; i++) {
+			pair = arr[i].split('=');
+			key = decodeURIComponent(pair[0]);
+			obj[key] = decodeURIComponent(pair[1]);
+		}
+		return obj;
+	}
+
+	/* ----------------------------------------------------------------
+	* _setIsc
+	サイカタ登録（isc）
+	---------------------------------------------------------------- */
+	function _setIsc(isc) {
+		_setSiteCatalyst('18', isc);
+	}
+
+	/* ----------------------------------------------------------------
+	* _setClk
+	サイカタ登録（clk）
+	---------------------------------------------------------------- */
+	function _setClk(clk) {
+		_setSiteCatalyst('85', clk);
+	}
+
+	/* ----------------------------------------------------------------
+	* _setSiteCatalyst
+	サイカタ登録
+	---------------------------------------------------------------- */
+	function _setSiteCatalyst(evarNum, value) {
+		if (evarNum === '18') {
+			_setSiCata().send({
+				'isc': value
+			});
+		} else if (evarNum === '85') {
+			_setSiCata().send({
+				'clk': value
+			});
+		} else {
+			var _value = {};
+			_value[evarNum] = value;
+
+			_setSiCata().send({
+				'eVar': _value
+			});
+		}
+	}
+
+	/* ----------------------------------------------------------------
+	* siteCatalyst_clk
+	サイカタ送信(clk)
+	---------------------------------------------------------------- */
+	$('.siteCatalyst_clk').on('click', function(e) {
+		var $this, clkLog;
+		e.preventDefault();
+		$this = $(this);
+		clkLog = $this.data('clk');
+		MpUtility.setClk(clkLog);
+		setTimeout(function() {
+			window.open($this.attr("href"), '_blank');
+		}, 100);
+	});
+	/* ----------------------------------------------------------------
+	* _setSiCata
+	* サイカタ
+	---------------------------------------------------------------- */
+	function _setSiCata() {
+		/* ----------------------------------------------------------------
+		* サイカタ - トリガーリンク設定
+		---------------------------------------------------------------- */
+		function _setEvent($target) {
+			if ($target) {
+				var $trigger = $target.find('.js_siCata_trigger'),
+					_params = {};
+
+				$trigger.on('click', function(e) {
+					var $this = $(this),
+						_isc = $this.attr('data-isc'),
+						_clk = $this.attr('data-clk'),
+						_events = $this.attr('data-events'),
+						_eVar = $this.attr('data-eVar'),
+						_prop = $this.attr('data-prop');
+
+					_params.isc = _isc;
+					_params.clk = _clk;
+					_params.events = _events ? JSON.parse(_events) : [];
+					_params.eVar = _eVar ? JSON.parse(_eVar) : {};
+					_params.prop = _prop ? JSON.parse(_prop) : {};
+
+					_send(_params);
+				});
+			}
+		}
+
+		/* ----------------------------------------------------------------
+		* サイカタ - 送信
+		---------------------------------------------------------------- */
+		function _send(params) {
+			if (params) {
+				var _linkTrackVars = [],
+					_events = [],
+					_i = 0,
+					s,
+					_timer = setInterval(function() {
+						_i++;
+						if (typeof s_gi !== 'undefined') {
+							clearInterval(_timer);
+							s = s_gi(s_account);
+							_push();
+						}
+						if (_i === 10) {
+							clearInterval(_timer);
+						}
+					}, 500);
+			}
+
+			function _push() {
+				s.linkTrackVars = 'None';
+				s.linkTrackEvents = 'None';
+
+				if (params.isc) {
+					_linkTrackVars.push('prop18');
+					_linkTrackVars.push('eVar18');
+
+					s.prop18 = params.isc;
+					s.eVar18 = 'D=c18';
+				}
+
+				if (params.clk) {
+					_linkTrackVars.push('eVar85');
+					s.eVar85 = params.clk;
+				}
+
+				if (params.events) {
+					params.events.forEach(function(i) {
+						_events.push('event' + i);
+					});
+				}
+
+				if (params.eVar) {
+					Object.keys(params.eVar).forEach(function(i) {
+						_linkTrackVars.push('eVar' + i);
+						s['eVar' + i] = params.eVar[i];
+					});
+				}
+
+				if (params.prop) {
+					Object.keys(params.prop).forEach(function(i) {
+						_linkTrackVars.push('prop' + i);
+						_linkTrackVars.push('eVar' + i);
+
+						s['prop' + i] = params.prop[i];
+						s['eVar' + i] = 'D=c' + i;
+					});
+				}
+
+				if (params.products) {
+					_linkTrackVars.push('products');
+					s.products = ';' + params.products + ';1;1';
+				}
+
+				if (_linkTrackVars.length > 0) {
+					s.linkTrackVars = _linkTrackVars.join(',');
+				}
+
+				if (_events.length > 0) {
+					s.events = _events.join(',');
+					s.linkTrackEvents = s.events;
+				}
+
+				if (s_code) {
+					(function() {
+						s.lnk = s.linkType = 'o';
+						s.linkName = 'dummy';
+						s_code = s.t();
+						s_code = s_code.match(/src="(.+)"\s/)[1];
+						var sc_img = new Image();
+						sc_img.src = s_code;
+					})();
+				} else {
+					s.tl(true, 'o', 'dummy');
+				}
+			}
+		}
+
+		return {
+			'setEvent': _setEvent,
+			'send': _send
+		};
+	}
+
+	return {
+		cutText: _cutText,
+		ifNoImage: _ifNoImage,
+		afterLazyload: _afterLazyload,
+		lazyload: _lazyload,
+		clickCassette: _clickCassette,
+		clickCassetteSmp: _clickCassetteSmp,
+		cassetteHover: _cassetteHover,
+		alignHeight: _alignHeight,
+		setCarousel: _setCarousel,
+		ifErrImage: _ifErrImage,
+		setSwiper: _setSwiper,
+		getUrlParam: _getUrlParam,
+		setIsc: _setIsc,
+		setClk: _setClk,
+		setSiteCatalyst: _setSiteCatalyst,
+		setSiCata: _setSiCata
+	};
+})(jQuery);

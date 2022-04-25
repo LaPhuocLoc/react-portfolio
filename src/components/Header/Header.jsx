@@ -9,14 +9,14 @@ const nav = [
     path: '/'
   },
   {
-    name: 'About',
-    icon: 'bx bxs-user',
-    path: '/about'
-  },
-  {
     name: 'Portfolio',
     icon: 'bx bxs-briefcase',
     path: '/portfolio'
+  },
+  {
+    name: 'About',
+    icon: 'bx bxs-user',
+    path: '/about'
   },
   {
     name: 'Contact',

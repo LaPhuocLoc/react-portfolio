@@ -3,41 +3,17 @@ import './resume.scss'
 
 const exp = [
   {
-    time: '2018 - present',
-    exp: 'web developer',
-    place: 'envato',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras leo orci, maximus quis auctor ac, interdum et ante. Nunc a vulputate ipsum. '
-  },
-  {
-    time: '2018 - present',
-    exp: 'web developer',
-    place: 'envato',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras leo orci, maximus quis auctor ac, interdum et ante. Nunc a vulputate ipsum. '
-  },
-  {
-    time: '2018 - present',
-    exp: 'web developer',
-    place: 'envato',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras leo orci, maximus quis auctor ac, interdum et ante. Nunc a vulputate ipsum. '
+    time: '2021年4月ー現在',
+    exp: 'WEBサイト作成',
+    place: '中央情報専門学校',
+    description: 'Lorem ipsum'
   },
 ]
 const edu = [
   {
-    time: '2015',
-    edu: 'engineering degree',
-    place: 'oxford university',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras leo orci, maximus quis auctor ac, interdum et ante. Nunc a vulputate ipsum. '
-  },
-  {
-    time: '2015',
-    edu: 'engineering degree',
-    place: 'oxford university',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras leo orci, maximus quis auctor ac, interdum et ante. Nunc a vulputate ipsum. '
-  },
-  {
-    time: '2015',
-    edu: 'engineering degree',
-    place: 'oxford university',
+    time: '2021年4月ー現在',
+    edu: 'IT WEB 学科',
+    place: '中央情報専門学校',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras leo orci, maximus quis auctor ac, interdum et ante. Nunc a vulputate ipsum. '
   },
 ]

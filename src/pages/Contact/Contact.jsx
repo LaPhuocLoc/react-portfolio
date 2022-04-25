@@ -69,23 +69,23 @@ const Contact = () => {
           <div className="row">
             <div className="col col-4">
               <div className="contact-info mb-3">
-                <h3>don't be shy !</h3>
-                <p>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                <h3>連絡先</h3>
+                <p>最後までご覧いただきありがとうございました。このサイトを通して、私のことを少しでも知っていただけたのなら嬉しいです。もしこのサイトや私について何かコメントがありましたら、フォームをご利用ください。</p>
                 <ul className="contact-info__list">
                   <li>
                     <div className="icon"><i className='bx bxs-map'></i></div>
-                    <span>Address point</span>
-                    4-19-11 INARI, SOKASHI, SAITAMA KEN, 340-0003, Japan
+                    <span>Address</span>
+                    埼玉県草加市稲荷4-19-11
                   </li>
                   <li>
                     <div className="icon"><i className='bx bxs-envelope-open' ></i></div>
                     <span>mail me</span>
-                    laphuocloc1701@gmail.com
+                    c210150@ccg.ac.jp
                   </li>
                   <li>
                     <div className="icon"><i className='bx bxs-phone-call' ></i></div>
                     <span>call me</span>
-                    <a href="tel:+7089592557">+7089592557</a>
+                    <a href="tel:07089592557">07089592557</a>
                   </li>
                 </ul>
                 <ul className="social-list">

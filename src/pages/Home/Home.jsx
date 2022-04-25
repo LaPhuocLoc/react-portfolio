@@ -21,7 +21,17 @@ const Home = () => {
             </h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras leo orci, maximus quis auctor ac, interdum et ante. Nunc a vulputate ipsum. Proin efficitur dapibus dolor at elementum.</p>
             <Button
-              className=""
+              className="portfolio-btn"
+            >
+              <Link to="/portfolio">
+                <span className="btn-text">My works</span>
+                <span className="btn-icon">
+                  <i className='bx bx-right-arrow-alt'></i>
+                </span>
+              </Link>
+            </Button>
+            <Button
+              className="about-btn"
             >
               <Link to="/about">
                 <span className="btn-text">more about me</span>

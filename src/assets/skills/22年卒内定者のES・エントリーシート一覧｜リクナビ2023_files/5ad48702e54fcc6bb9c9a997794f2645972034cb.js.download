@@ -1,0 +1,46 @@
+function _optParseLocationParam(url) {
+    var param = {};
+    var tmp = url;
+    if (tmp.indexOf("?") >= 0) {
+        tmp = url.split("?");
+        tmp = tmp[tmp.length - 1];
+    }
+    var list = tmp.split("&");
+    for (var i = 0; i < list.length; i++) {
+        var tmpParam = list[i].split("=");
+        param[tmpParam[0]] = tmpParam[1];
+    }
+    return param;
+}
+
+function optGetCookies() {
+    var cookies = {};
+    var all = document.cookie;
+    if (all === "") {
+        return cookies;
+    }
+    var list = all.split("; ");
+    for (var i = 0; i < list.length; i++) {
+        var cookie = list[i];
+        var p = cookie.indexOf("=");
+        var name = cookie.substring(0,p);
+        var value = cookie.substring(p+1);
+        value = decodeURIComponent(value);
+        cookies[name] = value;
+    }
+    return cookies;
+}
+
+function optSetCookie(name, value, day, path, domain) {
+    var cookie = name + "=" + encodeURIComponent(value);
+    if (day > 0) {
+        cookie += "; max-age=" + (day * 60 * 60 * 24);
+    }
+    if (path) {
+        cookie += "; path=" + path;
+    }
+    if (domain) {
+        cookie += "; domain=" + domain;
+    }
+    document.cookie = cookie;
+}

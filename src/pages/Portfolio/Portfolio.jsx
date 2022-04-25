@@ -15,6 +15,7 @@ const portfolio = [
     description: 'A react game landing page using sass, vitejs,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-game-landing-page.netlify.app/',
+    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
     tags: ['ui/ux', 'reactjs', 'vitejs', 'sass']
   },
   {
@@ -25,6 +26,7 @@ const portfolio = [
     description: 'A responsive react movie app using sass, axios,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-tmdb-movie-app.netlify.app/',
+    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
     tags: ['ui/ux', 'sass']
   },
   {
@@ -35,6 +37,7 @@ const portfolio = [
     description: 'A react game landing page using sass, vitejs,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-game-landing-page.netlify.app/',
+    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
     tags: ['ui/ux', 'reactjs', 'vitejs', 'sass']
   },
   {
@@ -45,7 +48,8 @@ const portfolio = [
     description: 'A responsive react movie app using sass, axios,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-tmdb-movie-app.netlify.app/',
-    tags: [ 'reactjs', 'sass']
+    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
+    tags: ['reactjs', 'sass']
   },
   {
     id: 5,
@@ -55,6 +59,7 @@ const portfolio = [
     description: 'A react game landing page using sass, vitejs,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-game-landing-page.netlify.app/',
+    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
     tags: ['ui/ux', 'reactjs', 'vitejs', 'sass']
   },
   {
@@ -65,6 +70,7 @@ const portfolio = [
     description: 'A responsive react movie app using sass, axios,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-tmdb-movie-app.netlify.app/',
+    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
     tags: ['reactjs', 'sass', 'web app']
   },
   {
@@ -75,6 +81,7 @@ const portfolio = [
     description: 'A react game landing page using sass, vitejs,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-game-landing-page.netlify.app/',
+    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
     tags: ['ui/ux', 'vitejs', 'sass', 'web app']
   },
 ]

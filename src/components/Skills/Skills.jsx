@@ -1,30 +1,46 @@
 import React from 'react'
 import './skills.scss'
-import { figma, flutter, git, css3, nodejs, react } from '../../assets/skills/skills.js'
+import { html, css, sass, javascript, bootstrap, responsive, react, redux, git, axios } from '../../assets/skills/skills.js'
 const skills = [
   {
-    name: 'css3',
-    path: css3
+    name: 'html',
+    path: html
   },
   {
-    name: 'git',
-    path: git
+    name: 'css',
+    path: css
   },
   {
-    name: 'nodejs',
-    path: nodejs
+    name: 'sass',
+    path: sass
   },
   {
-    name: 'flutter',
-    path: flutter
+    name: 'javascript',
+    path: javascript
+  },
+  {
+    name: 'bootstrap',
+    path: bootstrap
+  },
+  {
+    name: 'responsive web design',
+    path: responsive
   },
   {
     name: 'react',
     path: react
   },
   {
-    name: 'figma',
-    path: figma
+    name: 'redux',
+    path: redux
+  },
+  {
+    name: 'git',
+    path: git
+  },
+  {
+    name: 'axios',
+    path: axios
   },
 ]
 

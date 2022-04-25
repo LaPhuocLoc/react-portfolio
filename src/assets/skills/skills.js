@@ -1,8 +1,13 @@
-import figma from './figma.png'
-import flutter from './flutter.png'
-import git from './git.png'
-import css3 from './css3.png'
-import nodejs from './nodejs.png'
+import html from './html.png'
+import css from './css.png'
+import sass from './sass.png'
+import bootstrap from './bootstrap.png'
+import responsive from './responsive.png'
+import javascript from './js.png'
 import react from './react.png'
+import git from './git.png'
+import axios from './axios.png'
+import redux from './redux.png'
 
-export { figma, flutter, git, css3, nodejs, react }
+
+export { html, css, sass, javascript, bootstrap, responsive, react, redux, git, axios }

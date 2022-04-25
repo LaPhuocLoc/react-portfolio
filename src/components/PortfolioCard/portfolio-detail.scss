@@ -9,7 +9,7 @@
   overflow-y: auto;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease;
+  transition: opacity 0.3s ease;
   &.active {
     opacity: 1;
     visibility: visible;
@@ -24,16 +24,23 @@
     position: relative;
   }
   &__content {
-    background-color: rgba(37, 37, 37, 0.5);
+    @include flex(flex-start, space-between);
+    background-color: rgba(37, 37, 37);
     padding: 30px;
-    max-width: 900px;
+    max-width: 1200px;
     width: 100%;
-    border: 1px solid rgba(37, 37, 37, 0.75);
     border-radius: 6px;
-    backdrop-filter: blur(25px);
     transform: scale(0.98);
-
-    transition: all 0.5s ease;
+    @include tablet {
+      display: block;
+    }
+    &-left,
+    &-right {
+      width: 49%;
+      @include tablet {
+        width: 100%;
+      }
+    }
     .img {
       width: 100%;
       overflow: hidden;
@@ -92,6 +99,7 @@
       position: relative;
       width: 100%;
       padding-top: 62.5%;
+      display: none;
       .frame {
         position: absolute;
         top: 0;

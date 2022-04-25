@@ -1,0 +1,8 @@
+(function(adparams) {
+if (adparams) {
+var minutes = 30*60/60/60/24;
+optSetCookie('ytmvosId2023', adparams, minutes, '/', 'job.rikunabi.com');
+optSetCookie('ytmvosId2023', adparams, minutes, '/', 'job.sub.rikunabi.com');
+optSetCookie('ytmvosId2023', adparams, minutes, '/', 'job.rhmp.rikunabi.com');
+}
+})(bt_parameter("vos"))

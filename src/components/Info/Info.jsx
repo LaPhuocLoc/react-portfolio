@@ -3,36 +3,36 @@ import './info.scss'
 import Button from './../Button/Button';
 
 const info = {
-  firstName: "La",
-  lastName: "Phuoc Loc",
-  age: "21",
-  sex: "Male",
-  nation: "Vietnam",
-  address: "Saitama",
+  firstName: "La (ら)",
+  lastName: "Phuoc Loc (ふぉっくろっく)",
+  age: "22",
+  sex: "男",
+  nation: "ベトナム",
+  address: "埼玉県草加市稲荷4-19-11",
   phone: "07089592557",
-  email: "laphuocloc1701@gmail.com",
+  email: "c210150@ccg.ac.jp",
   facebook: "facebook.com/loc.la.9693",
   git: "https://github.com/LaPhuocLoc",
-  language: "Japanese, Vietnamese",
+  language: "ベトナム語、日本語",
 }
 const card = [
   {
-    title: '12',
-    text: 'years of',
-    span: 'experience'
-  },
-  {
-    title: '97',
-    text: 'completed',
+    title: '7',
+    text: 'personal',
     span: 'projects'
   },
   {
-    title: '81',
+    title: '1',
+    text: 'years of',
+    span: 'programming'
+  },
+  {
+    title: '3',
     text: 'happy',
     span: 'customers'
   },
   {
-    title: '53',
+    title: '1',
     text: 'awards',
     span: 'won'
   },
@@ -43,15 +43,15 @@ const Info = () => {
       <div className="info__basic">
         <h3>personal infos</h3>
         <ul className="info-list">
-          <li><span>First Name: </span>{info.firstName}</li>
-          <li><span>Last Name: </span>{info.lastName}</li>
-          <li><span>Age: </span>{info.age} Years</li>
-          <li><span>Sex: </span>{info.sex}</li>
-          <li><span>Nationality: </span>{info.nation}</li>
-          <li><span>Address: </span>{info.address}</li>
-          <li><span>Phone: </span>{info.phone}</li>
+          <li><span>姓: </span>{info.firstName}</li>
+          <li><span>名: </span>{info.lastName}</li>
+          <li><span>年齢: </span>{info.age} Years</li>
+          <li><span>性別: </span>{info.sex}</li>
+          <li><span>国籍: </span>{info.nation}</li>
+          <li><span>住所: </span>{info.address}</li>
+          <li><span>電話番号: </span>{info.phone}</li>
           <li><span>Facebook: </span>{info.facebook}</li>
-          <li><span>Language: </span>{info.language}</li>
+          <li><span>言語: </span>{info.language}</li>
           <li><span>Email: </span>{info.email}</li>
         </ul>
         <Button>

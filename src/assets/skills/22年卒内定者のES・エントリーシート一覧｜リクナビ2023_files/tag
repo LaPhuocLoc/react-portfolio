@@ -1,0 +1,6 @@
+BrightTag.site('em4AkL9,H1bZJA4,HTowkB2',function(s){
+s.domready(function(){
+s.tag('\x3c!-- Global site tag (gtag.js) - Google Ads: 763136686 --\x3e\n\x3cscript async src\x3d\x22https://www.googletagmanager.com/gtag/js?id\x3dAW-763136686\x22\x3e\x3c/script\x3e\n\x3cscript\x3e\n  window.dataLayer \x3d window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag(\x27js\x27, new Date());\n\n  gtag(\x27config\x27, \x27AW-763136686\x27);\n\x3c/script\x3e\n\n\x3c!-- Event snippet for Google \u5e83\u544a custom parameters --\x3e\n\x3cscript\x3e\n    gtag(\x27event\x27, \x27page_view\x27, {\x27send_to\x27: \x27AW-763136686\x27,\n      \x27login\x27: 1\n    });\n\x3c/script\x3e',{tagId:107579180});
+s.tag('\x3cscript async src\x3d\x22https://s.yimg.jp/images/listing/tool/cv/ytag.js\x22\x3e\x3c/script\x3e\n\x3cscript\x3e\nwindow.yjDataLayer \x3d window.yjDataLayer || [];\nfunction ytag() { yjDataLayer.push(arguments); }\nytag({\n  \x22type\x22:\x22yss_retargeting\x22,\n  \x22config\x22: {\n    \x22yahoo_ss_retargeting_id\x22: \x221001055933\x22,\n    \x22yahoo_sstag_custom_params\x22: {\n      login: 1\n    }\n  }\n});\n\x3c/script\x3e',{tagId:107579191});
+});
+});
