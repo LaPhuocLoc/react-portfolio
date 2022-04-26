@@ -8,4 +8,8 @@ import thumb7 from './project-7.jpg'
 import thumb8 from './project-8.jpg'
 import thumb9 from './project-9.jpg'
 
+
+
+
+
 export { thumb1, thumb2, thumb3, thumb4, thumb5, thumb6, thumb7, thumb8, thumb9 }

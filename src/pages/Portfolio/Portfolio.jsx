@@ -11,7 +11,7 @@ const portfolio = [
     id: 1,
     thumb: thumb1,
     ytb: 'Agv30p2llrU',
-    title: 'react landing page',
+    title: 'E-Commerce Store',
     description: 'A react game landing page using sass, vitejs,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-game-landing-page.netlify.app/',
@@ -22,7 +22,7 @@ const portfolio = [
     id: 2,
     thumb: thumb2,
     ytb: 'Agv30p2llrU',
-    title: 'react landing page',
+    title: 'Game Landing Page',
     description: 'A responsive react movie app using sass, axios,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-tmdb-movie-app.netlify.app/',
@@ -33,7 +33,7 @@ const portfolio = [
     id: 3,
     thumb: thumb3,
     ytb: 'Agv30p2llrU',
-    title: 'react landing page',
+    title: 'Movie App',
     description: 'A react game landing page using sass, vitejs,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-game-landing-page.netlify.app/',
@@ -44,7 +44,7 @@ const portfolio = [
     id: 4,
     thumb: thumb4,
     ytb: 'Agv30p2llrU',
-    title: 'react landing page',
+    title: 'My Portfolio',
     description: 'A responsive react movie app using sass, axios,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-tmdb-movie-app.netlify.app/',
@@ -55,7 +55,7 @@ const portfolio = [
     id: 5,
     thumb: thumb5,
     ytb: 'Agv30p2llrU',
-    title: 'react landing page',
+    title: 'Music Player',
     description: 'A react game landing page using sass, vitejs,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-game-landing-page.netlify.app/',
@@ -66,7 +66,7 @@ const portfolio = [
     id: 6,
     thumb: thumb6,
     ytb: 'Agv30p2llrU',
-    title: 'react web app',
+    title: 'Theater Homepage',
     description: 'A responsive react movie app using sass, axios,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-tmdb-movie-app.netlify.app/',
@@ -77,7 +77,7 @@ const portfolio = [
     id: 7,
     thumb: thumb7,
     ytb: 'Agv30p2llrU',
-    title: 'react web app',
+    title: 'MyFoodie',
     description: 'A react game landing page using sass, vitejs,...',
     source: 'https://github.com/LaPhuocLoc',
     preview: 'https://react-game-landing-page.netlify.app/',
@@ -95,7 +95,7 @@ const Portfolio = () => {
       <div className="section portfolio mb-3" data-aos="fade-up">
         <PageHeader white='my' yellow='portfolio' titleBg='works' />
         <div className="container">
-          <Tabs className="tab">
+          <Tabs className="tab" defaultIndex={2}>
             <TabList className="tab__nav">
               <Tab className="tab__nav-item">All</Tab>
               <Tab className="tab__nav-item">UI/UX</Tab>
