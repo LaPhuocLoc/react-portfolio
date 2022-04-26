@@ -13,9 +13,9 @@ const portfolio = [
     ytb: 'Agv30p2llrU',
     title: 'E-Commerce Store',
     description: 'A react game landing page using sass, vitejs,...',
-    source: 'https://github.com/LaPhuocLoc',
-    preview: 'https://react-game-landing-page.netlify.app/',
-    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
+    source: 'https://github.com/LaPhuocLoc/commerce-app',
+    preview: 'https://rokku-commerce.netlify.app/',
+    video: 'https://youtu.be/fJ6J75EB3dw',
     tags: ['ui/ux', 'reactjs', 'vitejs', 'sass']
   },
   {
@@ -24,9 +24,9 @@ const portfolio = [
     ytb: 'Agv30p2llrU',
     title: 'Game Landing Page',
     description: 'A responsive react movie app using sass, axios,...',
-    source: 'https://github.com/LaPhuocLoc',
-    preview: 'https://react-tmdb-movie-app.netlify.app/',
-    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
+    source: 'https://github.com/LaPhuocLoc/landing-page',
+    preview: 'https://rokku-game.netlify.app/',
+    video: 'https://youtu.be/Agv30p2llrU',
     tags: ['ui/ux', 'sass']
   },
   {
@@ -35,9 +35,9 @@ const portfolio = [
     ytb: 'Agv30p2llrU',
     title: 'Movie App',
     description: 'A react game landing page using sass, vitejs,...',
-    source: 'https://github.com/LaPhuocLoc',
-    preview: 'https://react-game-landing-page.netlify.app/',
-    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
+    source: 'https://github.com/LaPhuocLoc/movie-app',
+    preview: 'https://rokku-movie.netlify.app/',
+    video: 'https://youtu.be/EwX2gFZFobA',
     tags: ['ui/ux', 'reactjs', 'vitejs', 'sass']
   },
   {
@@ -45,10 +45,10 @@ const portfolio = [
     thumb: thumb4,
     ytb: 'Agv30p2llrU',
     title: 'My Portfolio',
-    description: 'A responsive react movie app using sass, axios,...',
-    source: 'https://github.com/LaPhuocLoc',
-    preview: 'https://react-tmdb-movie-app.netlify.app/',
-    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
+    description: 'このWebページです。HTMLとCSS(SASS),ReactJSを使用し、シングルページアプリケーションに仕上げました。',
+    source: 'https://github.com/LaPhuocLoc/react-portfolio',
+    preview: 'https://rokku.netlify.app/',
+    video: 'なし',
     tags: ['reactjs', 'sass']
   },
   {
@@ -57,9 +57,9 @@ const portfolio = [
     ytb: 'Agv30p2llrU',
     title: 'Music Player',
     description: 'A react game landing page using sass, vitejs,...',
-    source: 'https://github.com/LaPhuocLoc',
-    preview: 'https://react-game-landing-page.netlify.app/',
-    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
+    source: 'https://github.com/LaPhuocLoc/Mp3Player',
+    preview: 'https://rokku-music.netlify.app/',
+    video: 'https://youtu.be/kvvyQNWTAMQ',
     tags: ['ui/ux', 'reactjs', 'vitejs', 'sass']
   },
   {
@@ -68,9 +68,9 @@ const portfolio = [
     ytb: 'Agv30p2llrU',
     title: 'Theater Homepage',
     description: 'A responsive react movie app using sass, axios,...',
-    source: 'https://github.com/LaPhuocLoc',
-    preview: 'https://react-tmdb-movie-app.netlify.app/',
-    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
+    source: 'https://github.com/LaPhuocLoc/Movie-Theater',
+    preview: 'https://rokku-theater.netlify.app/',
+    video: 'https://youtu.be/2MY77Glw-3Q',
     tags: ['reactjs', 'sass', 'web app']
   },
   {
@@ -79,9 +79,9 @@ const portfolio = [
     ytb: 'Agv30p2llrU',
     title: 'MyFoodie',
     description: 'A react game landing page using sass, vitejs,...',
-    source: 'https://github.com/LaPhuocLoc',
-    preview: 'https://react-game-landing-page.netlify.app/',
-    video: 'https://www.youtube.com/watch?v=Agv30p2llrU',
+    source: 'https://github.com/LaPhuocLoc/HelloWorldGroup',
+    preview: '',
+    video: '',
     tags: ['ui/ux', 'vitejs', 'sass', 'web app']
   },
 ]
