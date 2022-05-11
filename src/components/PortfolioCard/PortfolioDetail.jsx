@@ -21,7 +21,7 @@ const PortfolioDetail = ({ item, id }) => {
 
           </div>
           <div className="portfolio-detail__content-right">
-            <h3><span>Description</span></h3>
+            <h3><span>詳細</span></h3>
             {/* <div className="video">
               <div className="frame">
                 <iframe src="" title="portfolio" allowFullScreen></iframe>
@@ -29,9 +29,11 @@ const PortfolioDetail = ({ item, id }) => {
             </div> */}
             <p>{item.description}</p>
             <ul>
-              <li> Created - <span>4 Dec 2022</span> </li>
-              <li> Tags - <span>{item.tags.join(', ')}</span> </li>
-              <li> Technology - <span>HTML, CSS, ReactJS</span> </li>
+              <li> Created - <span>{item.date}</span> </li>
+              <li> Role - <span>{item.role}</span> </li>
+              <li> Frontend - <span>{item.frontend.join(", ")}</span> </li>
+              <li> Backend - <span>{item.backend}</span> </li>
+              <li> Tags - <span style={{ textTransform: "lowercase" }}>{item.tags.join(' / ')}</span> </li>
               <li> Source - <a href={item.source} target="_blank">{item.source}</a> </li>
               <li> Demo - <a href={item.preview} target="_blank">{item.preview}</a> </li>
               <li> Preview video - <a href={item.video} target="_blank">{item.video}</a> </li>

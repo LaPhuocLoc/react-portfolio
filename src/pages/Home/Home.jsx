@@ -17,9 +17,13 @@ const Home = () => {
         <div className="home__text">
           <div className="home__text-wrap">
             <h1>I'm La Phuoc Loc.
-              <span>frontend developer</span>
+              <span>web developer</span>
             </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras leo orci, maximus quis auctor ac, interdum et ante. Nunc a vulputate ipsum. Proin efficitur dapibus dolor at elementum.</p>
+            <p>ベトナム出身のエンジニア。HTML, CSS, Javascriptを中心に様々なウェブサイト開発を経験してきました。
+              現在、JavascriptやPython, React を習得しています。特にReactでのWEBサイト構築に自信があり、このサイトや、ゲームランディングページ,Netflixのような動画配信サイトなどを作成しました。
+              
+
+            </p>
             <Button
               className="portfolio-btn"
             >

@@ -47,10 +47,10 @@ const skills = [
 const Skills = () => {
   return (
     <>
-      <h3 className="skill-heading mb-3">My Skills</h3>
+      <h3 className="skill-heading mb-3">スキルシート</h3>
       <div className="skill">
         {skills.map((item, i) => (
-          <div className="skill-item" key={i}>
+          <div className="skill-item" key={i} data-aos="fade-up">
             <div className="skill-item__img mb-1">
               <div className="skill-item__img-wrap" style={{ backgroundImage: `url(${item.path})` }}></div>
             </div>
