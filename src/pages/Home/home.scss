@@ -65,7 +65,7 @@
         position: relative;
         padding-left: 70px;
         color: var(--main-color);
-        text-transform: uppercase;
+        text-transform: capitalize;
         @include laptop {
           font-size: 44px;
         }

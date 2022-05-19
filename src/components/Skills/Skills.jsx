@@ -1,6 +1,6 @@
 import React from 'react'
 import './skills.scss'
-import { html, css, sass, javascript, bootstrap, responsive, react, redux, git, axios } from '../../assets/skills/skills.js'
+import { html, css, sass, javascript, java, bootstrap, responsive, react, redux, git, axios } from '../../assets/skills/skills.js'
 const skills = [
   {
     name: 'html',
@@ -17,6 +17,10 @@ const skills = [
   {
     name: 'javascript',
     path: javascript
+  },
+  {
+    name: 'java',
+    path: java
   },
   {
     name: 'bootstrap',

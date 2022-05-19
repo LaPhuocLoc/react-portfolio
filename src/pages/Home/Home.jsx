@@ -16,8 +16,8 @@ const Home = () => {
         </div>
         <div className="home__text">
           <div className="home__text-wrap">
-            <h1>I'm La Phuoc Loc.
-              <span>web developer</span>
+            <h1>Hello, I'm
+              <span>La Phuoc Loc</span>
             </h1>
             <p>
             中央情報専門学校IT・WEB学科のラ・フォック・ロックです。ベトナムのホーチミン市の出身です。私は、常に新しいことに興味を持ち続けて、設定した目標に向けて真面目に努力する人です。高校時代に学んでいたプログラミングで課題を解決した際に楽しみを感じたのきっかけで、IT業界に興味を持ちました。プログラミングを学ぶため、日本に留学し、在校のIT・WEB学科に進学しました。

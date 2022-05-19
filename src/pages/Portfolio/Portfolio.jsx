@@ -15,7 +15,7 @@ const portfolio = [
     description: '中央情報専門学校のプレゼンテーショングランプリ大会で1年生の制作部門(技術)「2位」を取りました作品です。ウェブサイトのテーマは「マイフーディ」です。中国、ベトナム、日本の料理の特徴や具体的なレシピを紹介しました。さらに「国の紹介」ページ、「ミニゲーム」ページ、「お問合せ」ページ、そしてページ内検索機能など、チーム全員がやりたいコンテンツをどんどん追加していきました。仕事量が増えるよりもスケジュール管理が大変だったのですが、全員が満足する良い作品を完成させました。 ',
     role: 'フロントエンド',
     frontend: ['CSS', 'Bootstrap', 'Javascript'],
-    backend: 'Java, Spring Boot',
+    backend: 'Java, Spring Boot, MySQL',
     source: 'https://github.com/LaPhuocLoc/MyFoodie2',
     preview: 'https://rokku-food.netlify.app/',
     video: 'https://www.youtube.com/watch?v=rx-fLzNr1eM',
