@@ -37,7 +37,7 @@ const Home = () => {
               className="about-btn"
             >
               <Link to="/about">
-                <span className="btn-text">more about me</span>
+                <span className="btn-text">About</span>
                 <span className="btn-icon">
                   <i className='bx bx-right-arrow-alt'></i>
                 </span>

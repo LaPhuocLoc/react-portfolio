@@ -37,7 +37,7 @@ function App() {
           {/* <Route path="/blog" element={<Blog />} /> */}
         </Routes>
       </div>
-      <Cursor />
+      {/* <Cursor /> */}
     </BrowserRouter>
   )
 }

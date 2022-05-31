@@ -12,17 +12,27 @@
   }
   &__nav {
     @include flex(center, center);
-
+    & * ~ * {
+      margin-left: 1rem;
+    }
     &-item {
       font-family: $pp-font;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
+      border-radius: 10px;
       text-transform: uppercase;
-      padding: 0 1rem;
+      padding: .5rem .75rem;
       margin-bottom: 2rem;
+      background-color: var(--nav-bg-color);
+      color: var(--reverse-color);
+      transition: all .3s ease;
       &:focus {
         border: none;
         outline: none;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: var(--main-color);
       }
     }
   }
@@ -34,5 +44,5 @@
   }
 }
 .react-tabs__tab--selected {
-  color: var(--main-color);
+  background-color: var(--main-color);
 }

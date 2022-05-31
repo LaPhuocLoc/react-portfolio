@@ -17,7 +17,6 @@
   text-decoration: none !important;
   position: relative;
   z-index: 1;
-  padding: 16px 70px 16px 35px;
   font-size: 15px;
   font-weight: 600;
   font-family: $pp-font;
@@ -43,7 +42,7 @@
   }
   &:hover {
     .btn-text {
-      color: white!important;
+      color: white !important;
     }
   }
   &-text {
@@ -51,6 +50,8 @@
     z-index: 2;
     color: var(--txt-color);
     transition: all 0.3s ease;
+    display: block;
+    padding: 16px 70px 16px 35px;
   }
   &-icon {
     position: absolute;

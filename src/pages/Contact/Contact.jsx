@@ -75,17 +75,17 @@ const Contact = () => {
                   <li>
                     <div className="icon"><i className='bx bxs-map'></i></div>
                     <span>現住所</span>
-                    埼玉県草加市稲荷4-19-11
+                    埼玉県草加市稲荷
                   </li>
                   <li>
                     <div className="icon"><i className='bx bxs-envelope-open' ></i></div>
                     <span>メールアドレス</span>
-                    c210150@ccg.ac.jp
+                    cxxx150@ccg.ac.jp
                   </li>
                   <li>
                     <div className="icon"><i className='bx bxs-phone-call' ></i></div>
                     <span>電話番号</span>
-                    <a href="tel:07089592557">07089592557</a>
+                    <a href="tel:07089592557">07089592xxx</a>
                   </li>
                 </ul>
                 <ul className="social-list">

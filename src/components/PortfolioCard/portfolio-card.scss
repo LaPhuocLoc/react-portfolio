@@ -43,21 +43,24 @@
     transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
     z-index: 2;
   }
+  &:hover {
+    cursor: pointer;
+  }
   &::after {
     position: absolute;
     content: "";
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--main-color);
+    left: 0;
+    background-color: $black;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
     z-index: 1;
   }
   &:hover::after {
-    opacity: 1;
+    opacity: 0.5;
     visibility: visible;
   }
   &:hover h3 {

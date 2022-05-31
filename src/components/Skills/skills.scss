@@ -23,15 +23,20 @@
       @include flex(center, center);
       width: 120px;
       height: 120px;
-      $skill-bg: 37,37,37;
+      $skill-bg: 37, 37, 37;
       background-color: var(--toggle-color);
       border-radius: 50%;
+      transition: box-shadow .3s ease, transform .3s ease;
       &-wrap {
         width: 60%;
         height: 60%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+      }
+      &:hover {
+        box-shadow: 0 0 3px var(--toggle-color);
+        transform: scale(1.05);
       }
     }
     &__name {
