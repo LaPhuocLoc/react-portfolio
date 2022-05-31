@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const info = {
   firstName: "La (ら)",
   lastName: "Phuoc Loc (ふぉっくろっく)",
-  birthday: "2000年01月17日(22歳)",
+  birthday: "22歳",
   sex: "男",
   nation: "ベトナム",
-  address: "埼玉県草加市稲荷",
+  address: "埼玉県草加市",
   phone: "07089592xxx",
   email: "cxxx150@ccg.ac.jp",
   facebook: "facebook.com/loc.la.9693",

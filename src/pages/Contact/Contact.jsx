@@ -75,7 +75,7 @@ const Contact = () => {
                   <li>
                     <div className="icon"><i className='bx bxs-map'></i></div>
                     <span>現住所</span>
-                    埼玉県草加市稲荷
+                    埼玉県草加市
                   </li>
                   <li>
                     <div className="icon"><i className='bx bxs-envelope-open' ></i></div>

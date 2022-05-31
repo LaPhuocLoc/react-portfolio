@@ -17,7 +17,7 @@ const portfolio = [
     frontend: ['CSS', 'Bootstrap', 'Javascript'],
     backend: 'Java, Spring Boot, MySQL',
     source: 'https://github.com/LaPhuocLoc/MyFoodie2',
-    preview: 'https://rokku-food.netlify.app/',
+    // preview: 'https://rokku-food.netlify.app/',
     video: 'https://www.youtube.com/watch?v=rx-fLzNr1eM',
     tags: ['git', 'ui / ux', 'css', 'bootstrap', 'responsive', 'javascript', 'web api', 'web app', 'food', 'travel']
   },
@@ -31,7 +31,7 @@ const portfolio = [
     frontend: ['SCSS', 'React'],
     backend: 'The Movie Database (TMDB) API',
     source: 'https://github.com/LaPhuocLoc/movie-app',
-    preview: 'https://rokku-movie.netlify.app/',
+    // preview: 'https://rokku-movie.netlify.app/',
     video: 'https://youtu.be/EwX2gFZFobA',
     tags: ['react', 'scss', 'responsive', 'web api', 'axios', 'movie', 'web app']
   },
@@ -45,7 +45,7 @@ const portfolio = [
     frontend: ['SCSS', 'React'],
     backend: 'なし',
     source: 'https://github.com/LaPhuocLoc/landing-page',
-    preview: 'https://rokku-game.netlify.app/',
+    // preview: 'https://rokku-game.netlify.app/',
     video: 'https://youtu.be/Agv30p2llrU',
     tags: ['react', 'scss', 'vitejs', 'animation', 'game landing page', 'web design']
   },
@@ -59,7 +59,7 @@ const portfolio = [
     frontend: ['SCSS', 'React'],
     backend: 'なし',
     source: 'https://github.com/LaPhuocLoc/react-portfolio',
-    preview: 'https://rokku.netlify.app/',
+    // preview: 'https://rokku.netlify.app/',
     video: 'なし',
     tags: ['react', 'scss', 'ui/ux', 'responsive', 'animation', 'portfolio', 'web design']
   },
@@ -73,7 +73,7 @@ const portfolio = [
     frontend: ['SCSS', 'Ant Design', 'React'],
     backend: 'なし',
     source: 'https://github.com/LaPhuocLoc/commerce-app',
-    preview: 'https://rokku-commerce.netlify.app/',
+    // preview: 'https://rokku-commerce.netlify.app/',
     video: 'https://youtu.be/fJ6J75EB3dw',
     tags: ['react', 'scss', 'responsive', 'ant design', 'ecommerce', 'web app']
   },
@@ -87,7 +87,7 @@ const portfolio = [
     frontend: ['CSS', 'Javascript'],
     backend: 'なし',
     source: 'https://github.com/LaPhuocLoc/Mp3Player',
-    preview: 'https://rokku-music.netlify.app/',
+    // preview: 'https://rokku-music.netlify.app/',
     video: 'https://youtu.be/kvvyQNWTAMQ',
     tags: ['javascript', 'css', 'ui/ux', 'music app']
   },
@@ -101,7 +101,7 @@ const portfolio = [
     frontend: ['CSS', 'Bootstrap', 'Javascript'],
     backend: 'なし',
     source: 'https://github.com/LaPhuocLoc/Movie-Theater',
-    preview: 'https://rokku-theater.netlify.app/',
+    // preview: 'https://rokku-theater.netlify.app/',
     video: 'https://youtu.be/2MY77Glw-3Q',
     tags: ['css', 'javascript', 'responsive', 'bootstrap', 'movie', 'web design']
   },
