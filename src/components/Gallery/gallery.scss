@@ -1,0 +1,19 @@
+@use "../../scss/" as *;
+.gallery {
+    .swiper-slide {
+        aspect-ratio: 16/9;
+    }
+    .gallery__sub {
+        .swiper-slide {
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            opacity: 0.25;
+            &:hover {
+                opacity: 0.6;
+            }
+            &.swiper-slide-thumb-active {
+                opacity: 1!important;
+            }
+        }
+    }
+}

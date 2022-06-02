@@ -1,4 +1,5 @@
 import React from 'react'
+import Gallery from '../Gallery/Gallery'
 import './portfolio-detail.scss'
 const PortfolioDetail = ({ item, id }) => {
 
@@ -15,9 +16,10 @@ const PortfolioDetail = ({ item, id }) => {
         <div className="portfolio-detail__content">
           <div className="portfolio-detail__content-left">
             <h3><span>{item.title}</span></h3>
-            <div className="img mb-1">
+            {/* <div className="img mb-1">
               <div className="img-wrap" style={{ backgroundImage: `url(${item.thumb})` }}></div>
-            </div>
+            </div> */}
+            <Gallery item={item}/>
 
           </div>
           <div className="portfolio-detail__content-right">

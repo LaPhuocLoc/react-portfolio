@@ -85,7 +85,11 @@ const Info = () => {
           </li>
         </ul>
         <Button>
-          <a href="https://drive.google.com/file/d/14BNcLxvB7DAkVSYYgVbuBf9fup7E4eNB" target="_blank" download>
+          <a
+            href="https://drive.google.com/file/d/14BNcLxvB7DAkVSYYgVbuBf9fup7E4eNB"
+            rel="noopener"
+            download
+          >
             <span className="btn-text">履歴書ダウンロード</span>
             <span className="btn-icon">
               <i className="bx bxs-download"></i>

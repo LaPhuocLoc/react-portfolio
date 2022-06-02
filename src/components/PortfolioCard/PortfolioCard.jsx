@@ -11,7 +11,7 @@ const PortfolioCard = ({ item, id }) => {
 
   return (
     <div className="portfolio-card" onClick={handleClick}>
-      <div className="bg-wrap" style={{ backgroundImage: `url(${item.thumb})` }}></div>
+      <div className="bg-wrap" style={{ backgroundImage: `url(${item.thumbUrl[0]})` }}></div>
       <h3>{item.title}</h3>
     </div>
   )

@@ -2,14 +2,21 @@ import React from 'react'
 import './portfolio.scss'
 import { Tabs, TabList, Tab, TabPanel } from 'react-tabs'
 import PageHeader from './../../components/PageHeader/PageHeader';
-import { thumb1, thumb2, thumb3, thumb4, thumb5, thumb6, thumb7 } from '../../assets/portfolio/portfolio'
+import {
+  portfolio1, portfolio2, portfolio3, portfolio4,
+  music1, music2,
+  theater1, theater2, theater3,
+  foodie1, foodie2, foodie3, foodie4, foodie5,
+  ec1, ec2, ec3, ec4,
+  game1, game2, game3, game4, game5,
+  movie1, movie2, movie3, movie4, movie5,
+} from '../../assets/portfolio/portfolio'
 import PortfolioDetail from '../../components/PortfolioCard/PortfolioDetail';
 import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
-
 const portfolio = [
   {
     id: 1,
-    thumb: thumb1,
+    thumbUrl: [foodie1, foodie2, foodie3, foodie4, foodie5],
     date: '2021年10月15日ー2021年11月23日',
     title: 'MyFoodie',
     description: '中央情報専門学校のプレゼンテーショングランプリ大会で1年生の制作部門(技術)「2位」を取りました作品です。ウェブサイトのテーマは「マイフーディ」です。中国、ベトナム、日本の料理の特徴や具体的なレシピを紹介しました。さらに「国の紹介」ページ、「ミニゲーム」ページ、「お問合せ」ページ、そしてページ内検索機能など、チーム全員がやりたいコンテンツをどんどん追加していきました。仕事量が増えるよりもスケジュール管理が大変だったのですが、全員が満足する良い作品を完成させました。 ',
@@ -23,7 +30,7 @@ const portfolio = [
   },
   {
     id: 2,
-    thumb: thumb2,
+    thumbUrl: [movie1, movie2, movie3, movie4, movie5],
     date: '2022年3月4日ー2022年3月14日',
     title: 'Movie App',
     description: 'フロントエンドはSCSSとReact,バックエンドはTMDB APIを利用して、動画配信サービスのネットフリックスのようなWEBサイトを作成しました。',
@@ -37,7 +44,8 @@ const portfolio = [
   },
   {
     id: 3,
-    thumb: thumb3,
+    thumbUrl: [game1, game2, game3, game4, game5],
+
     date: '2022年2月2日ー2022年2月16日',
     title: 'Game Landing Page',
     description: 'SCSSやReactJSを利用し、レスポンシブのゲームランディングページを作成しました。',
@@ -51,7 +59,7 @@ const portfolio = [
   },
   {
     id: 4,
-    thumb: thumb4,
+    thumbUrl: [portfolio1, portfolio2, portfolio3, portfolio4],
     date: '2022月3月25日2022月4月1日',
     title: 'My Portfolio',
     description: 'このWebページです。HTMLとCSS(SASS),ReactJSを使用し、シングルページアプリケーションに仕上げました。これまでに手がけた制作物、身につけたスキルをまとめています。',
@@ -65,7 +73,8 @@ const portfolio = [
   },
   {
     id: 5,
-    thumb: thumb5,
+    thumbUrl: [ec1, ec2, ec3, ec4],
+
     date: '2022年4月ー未定',
     title: 'E-Commerce Store(未完成)',
     description: 'SCSSやReactJSを利用し、レスポンシブのWEBデザインのECサイトを作成しています。未完成なので、バックエンドはまだ何もありません。',
@@ -79,7 +88,8 @@ const portfolio = [
   },
   {
     id: 6,
-    thumb: thumb6,
+    thumbUrl: [music1, music2],
+
     date: '2022年1月11日ー2022年1月17日',
     title: 'Music Player',
     description: 'CSSとJavascriptを用いてミュージックプレイヤーアプリを作成しました。',
@@ -93,7 +103,8 @@ const portfolio = [
   },
   {
     id: 7,
-    thumb: thumb7,
+    thumbUrl: [theater1,theater2,theater3],
+
     date: '2022年1月17日ー2022年1月19日',
     title: 'Theater Homepage',
     description: 'CSSやJavascript,Bootstrapを用いて映画館情報のレスポンシブのWEBサイトを作成しました。',
