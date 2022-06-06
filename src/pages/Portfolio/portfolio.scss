@@ -12,6 +12,9 @@
   }
   &__nav {
     @include flex(center, center);
+    @include mobile {
+      flex-wrap: wrap;
+    }
     & * ~ * {
       margin-left: 1rem;
     }
@@ -21,11 +24,11 @@
       font-weight: 600;
       border-radius: 10px;
       text-transform: uppercase;
-      padding: .5rem .75rem;
+      padding: 0.5rem 0.75rem;
       margin-bottom: 2rem;
       background-color: var(--nav-bg-color);
       color: var(--reverse-color);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       &:focus {
         border: none;
         outline: none;
@@ -34,6 +37,12 @@
         cursor: pointer;
         background-color: var(--main-color);
       }
+      @include mobile {
+        width: 45%;
+        padding: 1rem 1.5rem;
+        margin: 0.5rem;
+        text-align: center;
+      }
     }
   }
   &__panel {
@@ -41,6 +50,9 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
+    @include mobile {
+      margin-top: .5rem;
+    }
   }
 }
 .react-tabs__tab--selected {

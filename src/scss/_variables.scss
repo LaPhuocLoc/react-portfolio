@@ -1,13 +1,11 @@
-
 $body-bg: #111111;
 $main-color: #ffb400;
 $main-light: mix(white, $main-color, 25%);
 $txt-color: #fff;
 $dark-title-bg: hsla(0, 0%, 100%, 0.07);
-$light-title-bg: rgba(30,37,48,.07);
+$light-title-bg: rgba(30, 37, 48, 0.07);
 $success-color: rgba(76, 175, 80, 1);
 $error-color: rgba(244, 67, 54, 1);
-
 
 $white: #fff;
 $black: #000;
@@ -19,6 +17,5 @@ $mobile-width: 767.98px;
 $tablet-width: 991.98px;
 $laptop-width: 1399.98px;
 
-$font-family: "Open Sans", sans-serif;
+$font-family: "游ゴシック", YuGothic, sans-serif;
 $pp-font: "Poppins", sans-serif;
-

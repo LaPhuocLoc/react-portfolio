@@ -81,17 +81,18 @@
     ul {
       li {
         margin-bottom: 10px;
-        font-weight: 500;
+        font-weight: 300;
         text-transform: capitalize;
         color: $white;
 
         span {
-          font-weight: 300;
+          font-weight: 400;
           color: $white;
         }
         a {
           text-transform: lowercase;
           color: var(--main-color);
+          font-weight: 400;
         }
       }
     }
