@@ -25,21 +25,21 @@
   outline: none !important;
   cursor: pointer !important;
   border: 1px solid var(--main-color);
-  &::before {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: translateX(100%);
-    background-color: var(--main-color);
-    transition: all 0.3s ease;
-  }
-  &:hover::before {
-    transform: translateX(0);
-  }
+  // &::before {
+  //   z-index: -1;
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   transform: translateX(-100%);
+  //   background-color: var(--main-color);
+  //   transition: all 0.4s ease;
+  // }
+  // &:hover::before {
+  //   transform: translateX(0);
+  // }
   &:hover {
     .btn-text {
       color: white !important;
@@ -51,11 +51,11 @@
     color: var(--txt-color);
     transition: all 0.3s ease;
     display: block;
-    padding: 16px 70px 16px 35px;
+    padding: 16px 32px 16px 64px;
   }
   &-icon {
     position: absolute;
-    right: -1px;
+    left: -1px;
     top: -1px;
     bottom: 0;
     width: 55px;
@@ -67,5 +67,43 @@
     color: #fff;
     background-color: var(--main-color);
     border-radius: 50%;
+    animation-name: slide-out;
+    animation-duration: .3s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -170px;
+      height: 100%;
+      width: 200px;
+      background-color: var(--main-color);
+      z-index: -10;
+    }
+  }
+}
+.is-hover {
+  .btn-text {
+    padding: 16px 64px 16px 32px;
+  }
+  .btn-icon {
+    animation-name: slide-in;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+}
+@keyframes slide-in {
+  100% {
+    left: calc(100% - 55px);
+  }
+}
+@keyframes slide-out {
+  0% {
+    left: calc(100% - 55px);
+  }
+  100% {
+    left: -1px;
   }
 }
